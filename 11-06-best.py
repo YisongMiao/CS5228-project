@@ -1,6 +1,10 @@
 from nltk.stem.porter import *
 stemmer = PorterStemmer()
 
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+
 def my_tokenizer(s):
     words = re.findall(r'[A-Za-z]+', s)
     words = [word.lower() for word in words]
@@ -9,12 +13,11 @@ def my_tokenizer(s):
 
 # below are Junda's work
 
-import matplotlib.pyplot as plt
-%matplotlib inline
+
 # for submit
 X_test = test_df['title']
 
-text_clf_svm = Pipeline([('vect', CountVectorizer(ngram_range=(1, 3), tokenizer=my_tokenizer, stop_words='english')),
+text_clf_svm = Pipeline([('vect', CountVectorizer(ngram_range=(1, 0), tokenizer=my_tokenizer, stop_words='english')),
                       ('tfidf', TfidfTransformer(use_idf=True)),
                       ('clf-svm', SGDClassifier(alpha=0.001, loss='hinge', penalty='l2', warm_start=True, n_iter=6, random_state=42)),])
 
@@ -34,4 +37,7 @@ write_file.close()
 plt.hist(result, normed=True, bins=5)
 plt.ylabel('Probability')
 plt.show()
-        
+
+# ngram_range(1, 0): submission result: 0.85886
+# ngram_range(1, 2): submission result: 0.87349
+# ngram_range(1, 3): submission result: 0.86879
