@@ -27,6 +27,8 @@ def my_tokenizer(s):
     return words
 
 
+X = train_df['title']
+y = train_df['category']
 X_test = test_df['title']
 
 text_clf_svm = Pipeline([('vect', CountVectorizer(ngram_range=(1, 2), tokenizer=my_tokenizer, stop_words='english')),

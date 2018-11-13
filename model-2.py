@@ -74,12 +74,11 @@ train_key = [k for k in custom_tokens.keys() if k[: 2] == 'tr']
 test_key = [k for k in custom_tokens.keys() if k[: 2] == 'te']
 print(len(train_key), len(test_key))
 
-X_test = test_df['title']
-
 text_clf_svm = Pipeline([('vect', CountVectorizer(ngram_range=(1, 2), tokenizer=lambda key: custom_tokens[key], stop_words=my_stop_word)),
                          ('tfidf', TfidfTransformer(use_idf=True)),
                          ('clf-svm', SGDClassifier(alpha=0.001, loss='hinge', penalty='l2', warm_start=True, n_iter=6, random_state=42))])
 
+y = train_df['category']
 text_clf_svm = text_clf_svm.fit(train_key, y.values)
 print('fit done')
 
