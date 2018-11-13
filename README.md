@@ -54,3 +54,11 @@ https://github.com/YisongMiao/CS5228-project/blob/master/data/test_v2.pk
 
 
 # Give us a star on this git repo if you like it!
+
+Contact:
+
+Junda Zhang: E0271047@u.nus.edu
+
+Chen Song: E0338224@u.nus.edu
+
+Yisong Miao: miaoyisong@gmail.com
