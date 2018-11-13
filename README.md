@@ -57,8 +57,8 @@ https://github.com/YisongMiao/CS5228-project/blob/master/data/test_v2.pk
 
 Contact:
 
-Junda Zhang: E0271047@u.nus.edu
+- Junda Zhang: E0271047@u.nus.edu (git: https://github.com/AHEADer)
 
-Chen Song: E0338224@u.nus.edu
+- Chen Song: E0338224@u.nus.edu
 
-Yisong Miao: miaoyisong@gmail.com
+- Yisong Miao: miaoyisong@gmail.com
